@@ -207,7 +207,7 @@ resource "azurerm_virtual_machine_extension" "Venrod3hrswin2016vm" {
   virtual_machine_id   = azurerm_windows_virtual_machine.Venrod3hrswin2016vm.id
   publisher            = "Microsoft.Azure.Extensions"
   type                 = "CustomScript"
-  type_handler_version = "1.0"
+  type_handler_version = "2.0"
 
   settings = <<SETTINGS
     {
