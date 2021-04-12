@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'Github', url: 'https://github.com/Cloud1PH/Venrod.git'
+                git branch: 'Windows3HrsVMTest', credentialsId: 'Github', url: 'https://github.com/Cloud1PH/Venrod.git'
             }
         }
         stage('Copy Provider') {
@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 echo "Azure RG will be destroyed in 8 working hours"
-                sleep(time: 8, unit: "HOURS")
+                sleep(time: 3, unit: "HOURS")
             }
         }
         stage('Remove RG - Terraform Destroy') {
