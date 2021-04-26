@@ -202,22 +202,22 @@ resource "azurerm_windows_virtual_machine" "Venrod3hrswin2016vm" {
 
 # Uncomment this section if you wish to install DS agent and add it on TMCS cloud one console
 
-resource "azurerm_virtual_machine_extension" "Venrod3hrswin2016vm" {
-  name                 = "Venrod3hrswin2016vm"
-  virtual_machine_id   = azurerm_windows_virtual_machine.Venrod3hrswin2016vm.id
-  publisher            = "Microsoft.Azure.Extensions"
-  type                 = "CustomScript"
-  type_handler_version = "2.1"
+#resource "azurerm_virtual_machine_extension" "Venrod3hrswin2016vm" {
+#  name                 = "Venrod3hrswin2016vm"
+#  virtual_machine_id   = azurerm_windows_virtual_machine.Venrod3hrswin2016vm.id
+#  publisher            = "Microsoft.Azure.Extensions"
+#  type                 = "CustomScript"
+#  type_handler_version = "2.1"
 
-  settings = <<SETTINGS
-    {
-	"fileUris": ["https://raw.githubusercontent.com/Cloud1PH/Public-Raw-Scripts/AgentDeploymentScriptWindows/windows.ps1"],
-    "commandToExecute": "powershell.exe windows.ps1"
-    }
-SETTINGS
+#  settings = <<SETTINGS
+#    {
+#	"fileUris": ["https://raw.githubusercontent.com/Cloud1PH/Public-Raw-Scripts/AgentDeploymentScriptWindows/windows.ps1"],
+#    "commandToExecute": "powershell.exe windows.ps1"
+#    }
+#SETTINGS
 
 
-  tags = {
-    environment = "Venrod Terraform WinVM"
-  }
-}
+# tags = {
+#    environment = "Venrod Terraform WinVM"
+#  }
+#}
