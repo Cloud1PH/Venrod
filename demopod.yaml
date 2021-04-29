@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+spec:
+  hostPID: true
+  hostIPC: true
+  hostNetwork: true
+  containers:
+  - name: nginx
+    image: nginx
+    securityContext:
+      allowPrivilegeEscalation: true
+      privileged: true
